@@ -1,0 +1,81 @@
+body {
+  background: var(--bg);
+}
+.event-container {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.event-header h2 {
+  margin: 0;
+  color: var(--accent);
+}
+.event-form {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+.event-form label {
+  display: block;
+  margin-top: 12px;
+  color: #333;
+}
+.event-form input,
+.event-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.event-form button {
+  margin-top: 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.event-form button:hover {
+  background: var(--accent-dark);
+}
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+}
+.event-table th,
+.event-table td {
+  padding: 12px;
+  border: 1px solid #eaf1fb;
+  text-align: center;
+}
+.event-table th {
+  background: #f0f6ff;
+  color: var(--accent);
+}
+.event-table tr:hover {
+  background: #f7f7fa;
+}
+.event-actions a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: bold;
+}
+.event-actions a:hover {
+  text-decoration: underline;
+}
