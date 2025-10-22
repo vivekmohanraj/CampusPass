@@ -14,8 +14,8 @@ $result = $eventModel->getAllUpcoming();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Events - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/event_list.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/event_list.css">
     <style>
         body {
             background: var(--bg-secondary);
@@ -227,7 +227,7 @@ $result = $eventModel->getAllUpcoming();
                 echo '<span class="sold-out">Already Booked</span>';
             } else {
                 if ($price == 0) {
-                    echo '<form action="/projects/campus_event_ticketing/app/controllers/BookingController.php?action=book" method="POST">';
+                    echo '<form action="../controllers/BookingController.php?action=book" method="POST">';
                     echo '<input type="hidden" name="event_id" value="' . $event_id . '"><button type="submit" class="book-btn">Book Free Ticket</button></form>';
                 } else {
                     echo '<button class="book-btn" onclick="payWithRazorpay('.$event_id.','.$price.',\'' . htmlspecialchars($row['name']) . '\')">Pay ₹' . htmlspecialchars($price) . ' & Book</button>';
@@ -254,7 +254,7 @@ $result = $eventModel->getAllUpcoming();
             handler: function (response){
                 var form = document.createElement('form');
                 form.method = 'POST';
-                form.action = '/projects/campus_event_ticketing/app/controllers/BookingController.php?action=book';
+                form.action = '../controllers/BookingController.php?action=book';
                 form.innerHTML = '<input type="hidden" name="event_id" value="'+eventId+'">' +
                                  '<input type="hidden" name="payment_id" value="'+response.razorpay_payment_id+'">';
                 document.body.appendChild(form);

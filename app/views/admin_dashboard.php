@@ -10,8 +10,8 @@ $payments = $conn->query("SELECT SUM(amount) as total FROM payments WHERE status
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/admin_dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/admin_dashboard.css">
     <style>
         body { 
             background: var(--bg-secondary);
@@ -213,10 +213,10 @@ $payments = $conn->query("SELECT SUM(amount) as total FROM payments WHERE status
                     <p>Manage your events and track performance</p>
                 </div>
                 <nav class="dashboard-nav">
-                    <a href="/projects/campus_event_ticketing/app/views/event_list.php">Manage Events</a>
-                    <a href="/projects/campus_event_ticketing/app/views/participants.php">View Participants</a>
-                    <a href="/projects/campus_event_ticketing/app/views/payments.php">View Payments</a>
-                    <a href="/projects/campus_event_ticketing/logout.php">Logout</a>
+                    <a href="event_list.php">Manage Events</a>
+                    <a href="participants.php">View Participants</a>
+                    <a href="payments.php">View Payments</a>
+                    <a href="../../logout.php">Logout</a>
                 </nav>
             </div>
         </div>

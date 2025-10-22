@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/login.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -22,7 +22,7 @@
                 <p class="subtitle">Sign in to access CampusPass</p>
             </div>
             
-            <form action="/projects/campus_event_ticketing/app/controllers/AuthController.php?action=login" method="POST" class="login-form">
+            <form action="../controllers/AuthController.php?action=login" method="POST" class="login-form">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email">
@@ -43,7 +43,7 @@
             </form>
             
             <div class="login-footer">
-                <p>Don't have an account? <a href="/projects/campus_event_ticketing/app/views/register.php" class="register-link">Create one now</a></p>
+                <p>Don't have an account? <a href="register.php" class="register-link">Create one now</a></p>
             </div>
         </div>
         

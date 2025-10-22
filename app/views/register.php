@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/register.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/register.css">
 </head>
 <body>
     <div class="register-container">
@@ -20,7 +20,7 @@
                 <h1>Create Account</h1>
                 <p class="subtitle">Join CampusPass today</p>
             </div>
-            <form id="regForm" action="/projects/campus_event_ticketing/app/controllers/AuthController.php?action=register" method="POST" autocomplete="off" novalidate class="register-form">
+            <form id="regForm" action="../controllers/AuthController.php?action=register" method="POST" autocomplete="off" novalidate class="register-form">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="full_name">Full Name</label>
@@ -88,7 +88,7 @@
             </form>
             
             <div class="register-footer">
-                <p>Already have an account? <a href="/projects/campus_event_ticketing/app/views/login.php" class="login-link">Sign in</a></p>
+                <p>Already have an account? <a href="login.php" class="login-link">Sign in</a></p>
             </div>
         </div>
         

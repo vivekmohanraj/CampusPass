@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payments - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
     <style>
         body { background: var(--bg-secondary); min-height: 100vh; }
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
@@ -49,7 +49,7 @@
             echo '<p>No payments found.</p>';
         }
         ?>
-            <p class="back-link" style="text-align:center;"><a href="/projects/campus_event_ticketing/app/views/admin_dashboard.php" class="back-link">← Back to Dashboard</a></p>
+            <p class="back-link" style="text-align:center;"><a href="admin_dashboard.php" class="back-link">← Back to Dashboard</a></p>
         </div>
     </div>
 </body>

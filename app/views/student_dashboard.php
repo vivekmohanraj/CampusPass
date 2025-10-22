@@ -12,7 +12,7 @@ $paid = $user_id ? $conn->query("SELECT SUM(amount) as total FROM payments WHERE
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
     <style>
         body { 
             background: var(--bg-secondary);
@@ -214,9 +214,9 @@ $paid = $user_id ? $conn->query("SELECT SUM(amount) as total FROM payments WHERE
                     <p>Welcome back! Here's your overview</p>
                 </div>
                 <nav class="dashboard-nav">
-                    <a href="/projects/campus_event_ticketing/app/views/student_events.php">Browse Events</a>
-                    <a href="/projects/campus_event_ticketing/app/views/my_tickets.php">My Tickets</a>
-                    <a href="/projects/campus_event_ticketing/logout.php">Logout</a>
+                    <a href="student_events.php">Browse Events</a>
+                    <a href="my_tickets.php">My Tickets</a>
+                    <a href="../../logout.php">Logout</a>
                 </nav>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Confirmation - CampusPass</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
     <style>
         body { background: var(--bg-secondary); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
         .container { max-width: 600px; width: 100%; }
@@ -36,7 +36,7 @@
         $user_id = $_SESSION['user_id'] ?? null;
         if (!$event_id || !$user_id) {
             echo '<div class="confirm-box"><div class="fail-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></div><div class="fail">Invalid Booking</div><p>Unable to process your booking request.</p></div>';
-            echo '<p style="text-align:center;"><a href="/projects/campus_event_ticketing/app/views/student_events.php" class="back-link">Back to Events</a></p>';
+            echo '<p style="text-align:center;"><a href="student_events.php" class="back-link">Back to Events</a></p>';
             exit;
         }
         $eventModel = new Event($conn);
@@ -61,10 +61,10 @@
             echo '<div class="detail-row"><span class="detail-label">Ticket ID:</span><span class="detail-value">' . htmlspecialchars($ticket['ticket_id']) . '</span></div>';
             echo '<div class="detail-row"><span class="detail-label">Payment Status:</span><span class="detail-value">' . htmlspecialchars($ticket['payment_status']) . '</span></div>';
             echo '</div>';
-            echo '<a href="/projects/campus_event_ticketing/app/views/student_events.php" class="back-link">Back to Events</a>';
+            echo '<a href="student_events.php" class="back-link">Back to Events</a>';
             echo '</div>';
         } else {
-            echo '<div class="confirm-box"><div class="fail-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></div><div class="fail">Booking Not Found</div><p>We couldn\'t find your booking details.</p><a href="/projects/campus_event_ticketing/app/views/student_events.php" class="back-link">Back to Events</a></div>';
+            echo '<div class="confirm-box"><div class="fail-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></div><div class="fail">Booking Not Found</div><p>We couldn\'t find your booking details.</p><a href="student_events.php" class="back-link">Back to Events</a></div>';
         }
         ?>
     </div>
