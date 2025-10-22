@@ -2,38 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CampussPass | Student Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CampusPass</title>
     <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
     <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/register.css">
-    <style>
-        .error { color: red; font-size: 13px; margin-left: 8px; }
-        input:invalid, select:invalid { border-color: #e74c3c; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .header h1 { margin: 0; font-size: 24px; }
-        .header h2 { margin: 5px 0 0; font-size: 18px; }
-    </style>
 </head>
 <body>
-    <div class="header">
-        <h1>CampussPass</h1>
-        <h2>Student Registration</h2>
+    <div class="register-container">
+        <div class="register-card">
+            <div class="register-header">
+                <div class="logo-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h1>Create Account</h1>
+                <p class="subtitle">Join CampusPass today</p>
+            </div>
+            <form id="regForm" action="/projects/campus_event_ticketing/app/controllers/AuthController.php?action=register" method="POST" autocomplete="off" novalidate class="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" name="full_name" id="full_name" placeholder="John Doe" required>
+                        <span class="error" id="err_full_name"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="johndoe" required>
+                        <span class="error" id="err_username"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="admission_number">Admission Number</label>
+                        <input type="text" name="admission_number" id="admission_number" placeholder="12345" required>
+                        <span class="error" id="err_admission_number"></span>
+                    </div>
+                    <div class="form-group half">
+                        <label for="department">Department</label>
+                        <select name="department" id="department" required>
+                            <option value="">Select Department</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="Computer Applications">Computer Applications</option>
+                        </select>
+                        <span class="error" id="err_department"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone" placeholder="1234567890" required>
+                        <span class="error" id="err_phone"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="your.email@example.com" required>
+                        <span class="error" id="err_email"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Create a strong password" required>
+                        <span class="error" id="err_password"></span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="register-btn">
+                    <span>Create Account</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+            </form>
+            
+            <div class="register-footer">
+                <p>Already have an account? <a href="/projects/campus_event_ticketing/app/views/login.php" class="login-link">Sign in</a></p>
+            </div>
+        </div>
+        
+        <div class="background-decoration">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
     </div>
-    <form id="regForm" action="/projects/campus_event_ticketing/app/controllers/AuthController.php?action=register" method="POST" autocomplete="off" novalidate>
-        <label>Full Name:</label><input type="text" name="full_name" id="full_name" required><span class="error" id="err_full_name"></span><br>
-        <label>Username:</label><input type="text" name="username" id="username" required><span class="error" id="err_username"></span><br>
-        <label>Admission Number:</label><input type="text" name="admission_number" id="admission_number" required><span class="error" id="err_admission_number"></span><br>
-        <label>Department:</label>
-        <select name="department" id="department" required>
-            <option value="">Select</option>
-            <option value="B.Tech">B.Tech</option>
-            <option value="Computer Applications">Computer Applications</option>
-        </select><span class="error" id="err_department"></span><br>
-        <label>Phone Number:</label><input type="text" name="phone" id="phone" required><span class="error" id="err_phone"></span><br>
-        <label>Email:</label><input type="email" name="email" id="email" required><span class="error" id="err_email"></span><br>
-        <label>Password:</label><input type="password" name="password" id="password" required><span class="error" id="err_password"></span><br>
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="/projects/campus_event_ticketing/app/views/login.php">Login here</a></p>
     <script>
     function showError(id, msg) {
         document.getElementById(id).textContent = msg;

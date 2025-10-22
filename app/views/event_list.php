@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events - CampusPass</title>
     <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
     <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/event_list.css">
 </head>

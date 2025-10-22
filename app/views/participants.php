@@ -2,19 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event Participants</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Participants - CampusPass</title>
     <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/admin_dashboard.css">
     <style>
-        .table-box { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 24px; margin: 32px auto; max-width: 900px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 10px; border-bottom: 1px solid #eee; }
-        th { background: var(--accent); color: #fff; }
+        body { background: var(--bg-secondary); min-height: 100vh; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .page-header { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-lg); color: white; text-align: center; }
+        .page-header h2 { margin: 0; color: white; font-size: 2rem; font-weight: 700; }
+        .table-box { background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 2rem; overflow-x: auto; }
+        .back-link { display: inline-block; margin-top: 1.5rem; color: #8b5cf6; font-weight: 600; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 768px) { .container { padding: 1rem; } }
     </style>
 </head>
 <body>
-    <div class="table-box">
-        <h2>Event Participants</h2>
+    <div class="container">
+        <div class="page-header">
+            <h2>Event Participants</h2>
+        </div>
+        <div class="table-box">
         <?php
         require_once __DIR__ . '/../models/Ticket.php';
         require_once __DIR__ . '/../models/Event.php';
@@ -43,7 +50,8 @@
             echo '<p>No participants found.</p>';
         }
         ?>
-        <p style="text-align:center;margin-top:20px;"><a href="/projects/campus_event_ticketing/app/views/admin_dashboard.php">Back to Dashboard</a></p>
+            <p class="back-link" style="text-align:center;"><a href="/projects/campus_event_ticketing/app/views/admin_dashboard.php" class="back-link">← Back to Dashboard</a></p>
+        </div>
     </div>
 </body>
 </html>
