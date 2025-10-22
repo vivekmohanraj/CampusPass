@@ -14,7 +14,7 @@
         </div>
         <div class="event-form">
             <h3>Create New Event</h3>
-            <form action="/projects/campus_event_ticketing/app/controllers/EventController.php?action=create" method="POST">
+            <form action="../controllers/EventController.php?action=create" method="POST">
                 <label>Event Name:</label><input type="text" name="name" required>
                 <label>Event Type:</label>
                 <select name="type" id="event_type_select" onchange="toggleCustomType()">
@@ -51,7 +51,7 @@
                     echo '<td>' . htmlspecialchars($row['venue']) . '</td>';
                     echo '<td>₹' . htmlspecialchars($row['price']) . '</td>';
                     echo '<td>' . htmlspecialchars($row['status']) . '</td>';
-                    echo '<td class="event-actions"><a href="/projects/campus_event_ticketing/app/views/event_list.php?edit_id=' . $row['id'] . '">Edit</a> | <a href="/projects/campus_event_ticketing/app/controllers/EventController.php?action=delete&id=' . $row['id'] . '" onclick="return confirm(\'Delete this event?\')">Delete</a></td>';
+                    echo '<td class="event-actions"><a href="event_list.php?edit_id=' . $row['id'] . '">Edit</a> | <a href="../controllers/EventController.php?action=delete&id=' . $row['id'] . '" onclick="return confirm(\'Delete this event?\')">Delete</a></td>';
                     echo '</tr>';
                 }
                 echo '</table>';
@@ -64,7 +64,7 @@
                 $edit_event = $eventModel->findById($edit_id);
                 if ($edit_event) {
                     echo '<div class="event-form"><h3>Edit Event</h3>';
-                    echo '<form action="/projects/campus_event_ticketing/app/controllers/EventController.php?action=update" method="POST">';
+                    echo '<form action="../controllers/EventController.php?action=update" method="POST">';
                     echo '<input type="hidden" name="id" value="' . $edit_event['id'] . '">';
                     echo '<label>Event Name:</label><input type="text" name="name" value="' . htmlspecialchars($edit_event['name']) . '" required>';
                     echo '<label>Event Type:</label><input type="text" name="type" value="' . htmlspecialchars($edit_event['type']) . '" required>';

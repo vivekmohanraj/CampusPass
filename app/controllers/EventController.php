@@ -29,7 +29,7 @@ if ($action === 'create' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         'status' => 'Upcoming'
     ];
     $eventModel->create($data);
-    header('Location: /projects/campus_event_ticketing/app/views/event_list.php');
+    header('Location: ../views/event_list.php');
     exit;
 }
 
@@ -38,13 +38,13 @@ if ($action === 'delete' && isset($_GET['id'])) {
     $stmt = $conn->prepare('DELETE FROM events WHERE id = ?');
     $stmt->bind_param('i', $id);
     $stmt->execute();
-    header('Location: /projects/campus_event_ticketing/app/views/event_list.php');
+    header('Location: ../views/event_list.php');
     exit;
 }
 
 if ($action === 'edit' && isset($_GET['id'])) {
     // For simplicity, redirect to event_list.php (edit form can be implemented as needed)
-    header('Location: /projects/campus_event_ticketing/app/views/event_list.php');
+    header('Location: ../views/event_list.php');
     exit;
 }
 
@@ -61,7 +61,7 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         'status' => $_POST['status']
     ];
     $eventModel->update($id, $data);
-    header('Location: /projects/campus_event_ticketing/app/views/event_list.php');
+    header('Location: ../views/event_list.php');
     exit;
 }
 
@@ -75,13 +75,13 @@ $events = $eventModel->getAllEvents();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event List</title>
-    <link rel="stylesheet" href="/projects/campus_event_ticketing/assets/css/theme.css">
+    <link rel="stylesheet" href="../../assets/css/theme.css">
 </head>
 <body>
     <div class="container">
         <h1>Event List</h1>
-        <a href="/projects/campus_event_ticketing/app/views/event_form.php" class="btn">Create New Event</a>
-        <a href="/projects/campus_event_ticketing/app/views/event_list.php" class="btn">Back to Event List</a>
+        <a href="event_form.php" class="btn">Create New Event</a>
+        <a href="event_list.php" class="btn">Back to Event List</a>
         <table>
             <thead>
                 <tr>
@@ -110,8 +110,8 @@ $events = $eventModel->getAllEvents();
                     <td><?php echo htmlspecialchars($event['max_attendees']); ?></td>
                     <td><?php echo htmlspecialchars($event['status']); ?></td>
                     <td>
-                        <a href="/projects/campus_event_ticketing/app/views/event_list.php?edit_id=<?php echo $event['id']; ?>" class="btn-edit">Edit</a>
-                        <a href="/projects/campus_event_ticketing/app/controllers/EventController.php?action=delete&id=<?php echo $event['id']; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this event?');">Delete</a>
+                        <a href="event_list.php?edit_id=<?php echo $event['id']; ?>" class="btn-edit">Edit</a>
+                        <a href="../controllers/EventController.php?action=delete&id=<?php echo $event['id']; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this event?');">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

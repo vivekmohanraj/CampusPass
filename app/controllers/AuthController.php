@@ -69,7 +69,7 @@ if ($action === 'register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($errors)) {
         echo '<ul style="color:red;">';
         foreach ($errors as $err) echo '<li>' . htmlspecialchars($err) . '</li>';
-        echo '</ul><a href="/projects/campus_event_ticketing/app/views/register.php">Go back</a>';
+        echo '</ul><a href="../views/register.php">Go back</a>';
         exit;
     }
     $data = [
@@ -85,18 +85,18 @@ if ($action === 'register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check for duplicate email, username, or admission number
     $existing = $userModel->findByEmail($data['email']);
     if ($existing) {
-        die('Email already registered. <a href="/projects/campus_event_ticketing/app/views/register.php">Try again</a>');
+        die('Email already registered. <a href="../views/register.php">Try again</a>');
     }
     $existingUsername = $userModel->findByUsername($data['username']);
     if ($existingUsername) {
-        die('Username already taken. <a href="/projects/campus_event_ticketing/app/views/register.php">Try again</a>');
+        die('Username already taken. <a href="../views/register.php">Try again</a>');
     }
     // Optionally check admission number uniqueness here as well
     if ($userModel->create($data)) {
-        header('Location: /projects/campus_event_ticketing/app/views/login.php?registered=1');
+        header('Location: ../views/login.php?registered=1');
         exit;
     } else {
-        die('Registration failed. <a href="/projects/campus_event_ticketing/app/views/register.php">Try again</a>');
+        die('Registration failed. <a href="../views/register.php">Try again</a>');
     }
 }
 
@@ -108,12 +108,12 @@ if ($action === 'login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['role'] = $user['role'];
         if ($user['role'] === 'admin') {
-            header('Location: /projects/campus_event_ticketing/app/views/admin_dashboard.php');
+            header('Location: ../views/admin_dashboard.php');
         } else {
-            header('Location: /projects/campus_event_ticketing/app/views/student_dashboard.php');
+            header('Location: ../views/student_dashboard.php');
         }
         exit;
     } else {
-        die('Invalid credentials. <a href="/projects/campus_event_ticketing/app/views/login.php">Try again</a>');
+        die('Invalid credentials. <a href="../views/login.php">Try again</a>');
     }
 }

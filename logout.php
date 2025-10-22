@@ -3,5 +3,5 @@
 session_start();
 session_unset();
 session_destroy();
-header('Location: /projects/campus_event_ticketing/app/views/login.php');
+header('Location: app/views/login.php');
 exit;
